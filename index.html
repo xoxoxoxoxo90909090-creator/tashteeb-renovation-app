@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تشطيب | Tashteeb - Renovation Roadmap &amp; Calculator</title>
+    <meta name="description" content="خريطة وتكاليف تشطيب الشقق وحاسبة الخامات والمشتريات - Egyptian apartment finishing roadmap and quantity calculator." />
+    <meta property="og:title" content="تشطيب | Tashteeb - Renovation Roadmap &amp; Calculator" />
+    <meta property="og:description" content="خريطة وتكاليف تشطيب الشقق وحاسبة الخامات والمشتريات - Egyptian apartment finishing roadmap and quantity calculator." />
+    <script>
+      // Suppress Vite HMR WebSocket connection errors in iframe/Cloud Run environment
+      (function() {
+        if (typeof window === 'undefined') return;
+        try {
+          var NativeWS = window.WebSocket;
+          if (NativeWS) {
+            window.WebSocket = function(url, protocols) {
+              var isViteHmr = (Array.isArray(protocols) ? protocols.indexOf('vite-hmr') !== -1 : protocols === 'vite-hmr') ||
+                              (typeof url === 'string' && (url.indexOf(':24678') !== -1 || url.indexOf('token=') !== -1));
+              if (isViteHmr) {
+                var dummy = new EventTarget();
+                dummy.readyState = 1;
+                dummy.OPEN = 1;
+                dummy.CLOSING = 2;
+                dummy.CLOSED = 3;
+                dummy.CONNECTING = 0;
+                dummy.send = function() {};
+                dummy.close = function() {};
+                setTimeout(function() {
+                  var evt = new Event('open');
+                  dummy.dispatchEvent(evt);
+                  if (typeof dummy.onopen === 'function') dummy.onopen(evt);
+                }, 0);
+                return dummy;
+              }
+              return new NativeWS(url, protocols);
+            };
+            window.WebSocket.prototype = NativeWS.prototype;
+            window.WebSocket.CONNECTING = 0;
+            window.WebSocket.OPEN = 1;
+            window.WebSocket.CLOSING = 2;
+            window.WebSocket.CLOSED = 3;
+          }
+        } catch (e) {}
+
+        window.addEventListener('unhandledrejection', function(event) {
+          var r = event && event.reason;
+          var msg = (r && (r.message || String(r))) || '';
+          var stack = (r && r.stack) || '';
+          if (
+            msg.indexOf('WebSocket') !== -1 ||
+            msg.indexOf('createWebSocketModuleRunnerTransport') !== -1 ||
+            stack.indexOf('@vite/client') !== -1 ||
+            stack.indexOf('createWebSocketModuleRunnerTransport') !== -1
+          ) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+
+        window.addEventListener('error', function(event) {
+          var msg = (event && event.message) || '';
+          var file = (event && event.filename) || '';
+          if (
+            msg.indexOf('WebSocket') !== -1 ||
+            msg.indexOf('createWebSocketModuleRunnerTransport') !== -1 ||
+            file.indexOf('@vite/client') !== -1
+          ) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          }
+        }, true);
+      })();
+    </script>
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

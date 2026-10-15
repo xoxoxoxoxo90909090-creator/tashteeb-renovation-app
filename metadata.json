@@ -1,0 +1,6 @@
+{
+  "name": "تشطيب | Tashteeb - Renovation Roadmap",
+  "description": "خريطة وتكاليف تشطيب الشقق وحاسبة الخامات والمشتريات - Egyptian apartment finishing roadmap and quantity calculator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
